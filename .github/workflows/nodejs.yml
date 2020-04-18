@@ -24,6 +24,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd website && npm run build --if-present && npm run deploy
+    - name: config git users
+      run: |
+        git config --global user.email ${{ secrets.EMAIL }}
+        git config --global user.name ${{ secrets.USERNAME }} 
+        git remote set-url origin https://${{ secrets.ACCESS_TOKEN }}@github.com/${{ secrets.USERNAME }}/docusaurus-to-gh-pages
+    - name: build & deploy
+      run: cd website && npm install && npm run build --if-present && echo ${{ secrets.CNAME }} >> build/test-site/CNAME && npm run deploy
       env:
         CI: true
