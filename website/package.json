@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "examples": "docusaurus-examples",
+    "dev": "docusaurus-start",
+    "clean": "rm -rf build/",
+    "build": "docusaurus-build",
+    "publish": "docusaurus-publish",
+    "deploy": "gh-pages -d build/test-site",
+    "write-translations": "docusaurus-write-translations",
+    "version": "docusaurus-version",
+    "rename-version": "docusaurus-rename-version"
+  },
+  "devDependencies": {
+    "docusaurus": "1.14.4",
+    "gh-pages": "2.2.0"
+  },
+  "name": "website",
+  "description": "This website was created with [Docusaurus](https://docusaurus.io/).",
+  "version": "0.0.1",
+  "main": "siteConfig.js",
+  "author": "sspantz <sspantiezheng@gmail.com> (https://sspantz.com/)",
+  "license": "MIT"
+}
